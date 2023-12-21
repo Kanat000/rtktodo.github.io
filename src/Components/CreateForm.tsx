@@ -36,7 +36,6 @@ const CreateForm: React.FC = () => {
                     <select id='create_todo_desc' className={createStyle.input}
                             {...register('status',
                                 {required: true})}
-                        value={'processing'}
                     >
                         <option value={'processing'}>В работе</option>
                         <option value={'pending'}>В ожидание</option>
