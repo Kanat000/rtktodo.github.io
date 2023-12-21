@@ -1,0 +1,61 @@
+@import "../../../src/index";
+.container{
+  height: 85vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  >div{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    &:first-child{
+      .counterBlock{
+        height: 40vh;
+        width: 40vh;
+
+        @include todoBoxStyle(6px, 2px, 16px, 1vh);
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vh;
+
+      }
+    }
+    &:last-child>div{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1vh;
+    }
+  }
+}
+.toggleBtn{
+  transition: 0.3s ease-in-out;
+
+  @include btnStyle();
+}
+.activeBtn, .activeBtn:hover{
+  background-color: #541be3;
+  color: white;
+}
+.counterItem{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+    >div{
+      &:first-child{
+        width: 7vh;
+        height: 7vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        @include fontStyle(black, 1.1em, 600);
+        @include todoBoxStyle(6px, 3px, 16px, 50%);
+        margin-left: 5vh;
+      }
+      &:last-child{
+        @include fontStyle(black, 0.9em, 500);
+        margin-left: 2vh;
+      }
+    }
+}

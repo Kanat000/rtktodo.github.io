@@ -1,0 +1,9 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2vh;
+  padding: 2vh 1vw 2vh 1vw;
+  height: 85vh;
+  overflow-y: auto;
+}

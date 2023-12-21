@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap');
+
+$pendingColor: rgba(217, 142, 87, 0.58);
+$doneColor: rgba(111, 224, 125, 0.55);
+$processColor: rgba(94, 117, 201, 0.55);
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a4a4a4;
+  border-radius: 2vh;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@mixin basicLabelStyle(){
+  @include fontStyle(black, 0.9em, 400);
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: underline;
+}
+@mixin basicInputStyle(){
+  width: 100%;
+  border-radius: 1vh;
+  padding: 1.5vh 0 1.5vh 0.5vw;
+  @include fontStyle(black, 0.9em, 400);
+  @include inputBoxStyle();
+  margin-top: 2vh;
+}
+@mixin btnStyle(){
+  width: 100%;
+  outline: none;
+  padding: 1vh 5vw;
+  @include fontStyle(black, 0.9em, 400);
+  @include todoBoxStyle(4px, 5px, 14px, 10vh);
+  cursor: pointer;
+  &:hover{
+    background-color: #ffffff;
+  }
+}
+
+@mixin fontStyle($fc, $fs, $fw){
+  color: $fc;
+  font-size: $fs;
+  font-weight: $fw;
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin todoBoxStyle($x, $y, $z, $br){
+  border: 1px solid rgba(231, 231, 231, 0.92);
+  background-color: rgba(248, 248, 248, 0.82);
+  box-shadow: rgba(136, 165, 191, 0.48) $x $y $z 0, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  border-radius: $br;
+}
+
+@mixin inputBoxStyle(){
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.77);
+  border: 1px solid #e8e8e8;
+  box-shadow: rgba(0, 0, 0, 0.06) 2px 5px 10px 2px inset;
+}
